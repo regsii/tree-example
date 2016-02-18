@@ -1,5 +1,7 @@
-{{node.label}}
+<span class="node-label nesting-level-{{nestingLevel}}">
+  {{node.label}}
+</span>
 
 {{#if node.children.length}}
-  {{the-tree tagName="ul" tree=node}}
+  {{the-tree tagName="ul" tree=node nestingLevel=nextNestingLevel}}
 {{/if}}
