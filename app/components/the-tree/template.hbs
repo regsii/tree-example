@@ -1,5 +1,8 @@
 {{#each tree.children as |node|}}
+
   {{tree-item tagName="li" node=node
     nestingLevel=nestingLevel
+    onLabelClicked=onNodeLabelClicked
   }}
+
 {{/each}}
