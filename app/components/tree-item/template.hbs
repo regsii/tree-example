@@ -1,9 +1,15 @@
+<span {{action 'toggleExpand' node}} style="cursor: pointer;">
+  {{#if node.isExpanded}}&or;{{else}}>{{/if}}
+</span>
+
 <span class="node-label nesting-level-{{nestingLevel}}" {{action 'labelClicked' node}}>
   {{node.label}}
 </span>
 
-{{#if node.children.length}}
-  {{the-tree tagName="ul" tree=node nestingLevel=nextNestingLevel
-    onNodeLabelClicked=onLabelClicked
-  }}
+{{#if node.isExpanded}}
+  {{#if node.children.length}}
+    {{the-tree tagName="ul" tree=node nestingLevel=nextNestingLevel
+      onNodeLabelClicked=onLabelClicked
+    }}
+  {{/if}}
 {{/if}}
